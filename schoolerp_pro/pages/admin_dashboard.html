@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - SchoolERP Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="icon" type="image/x-icon" href="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fschoolerp8473back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,<svg width=" 60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%232563EB" fill-opacity="0.1"><circle cx="30" cy="30" r="2"></circle></g></g>'); background-size: 60px 60px;"></div>
+    </div>
+
+    <!-- Main Layout Container -->
+    <div class="flex h-screen relative">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="w-64 bg-white shadow-modal border-r border-slate-200/20 transition-all duration-300 ease-out">
+            <!-- Sidebar Header -->
+            <div class="p-6 border-b border-slate-200/20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center">
+                        <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-slate-800">SchoolERP Pro</h1>
+                        <p class="text-xs text-slate-500">Admin Panel</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="p-4 space-y-2">
+                <a href="admin_dashboard.html" class="nav-item active flex items-center space-x-3 w-full text-left">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h4a2 2 0 012 2v6H8V5z"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="student_management.html" class="nav-item flex items-center space-x-3 w-full text-left">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
+                    </svg>
+                    <span>Student Management</span>
+                </a>
+
+                <a href="teacher_management.html" class="nav-item flex items-center space-x-3 w-full text-left">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                    <span>Teacher Management</span>
+                </a>
+
+                <a href="attendance_tracking.html" class="nav-item flex items-center space-x-3 w-full text-left">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                    </svg>
+                    <span>Attendance Tracking</span>
+                </a>
+
+                <a href="academic_records_report_cards.html" class="nav-item flex items-center space-x-3 w-full text-left">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <span>Academic Records</span>
+                </a>
+
+                <!-- Divider -->
+                <div class="border-t border-slate-200/20 my-4"></div>
+
+                <!-- Quick Actions -->
+                <div class="space-y-2">
+                    <p class="text-xs font-medium text-slate-500 uppercase tracking-wider px-3">Quick Actions</p>
+                    
+                    <button class="nav-item flex items-center space-x-3 w-full text-left" onclick="openModal('admissionModal')">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                        </svg>
+                        <span>New Admission</span>
+                    </button>
+
+                    <button class="nav-item flex items-center space-x-3 w-full text-left" onclick="openModal('reportModal')">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        <span>Generate Report</span>
+                    </button>
+
+                    <button class="nav-item flex items-center space-x-3 w-full text-left" onclick="openModal(&quot;noticeModal&quot;)">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>
+                        </svg>
+                        <span>Send Notice</span>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Sidebar Footer -->
+            <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-slate-200/20">
+                <button onclick="logout()" class="nav-item flex items-center space-x-3 w-full text-left text-error-600 hover:bg-error-50">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                    </svg>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 flex flex-col overflow-hidden">
+            <!-- Top Header -->
+            <header class="bg-white shadow-card border-b border-slate-200/20 px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <!-- Header Left -->
+                    <div class="flex items-center space-x-4">
+                        <button id="sidebarToggle" class="lg:hidden p-2 rounded-md hover:bg-slate-100">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                            </svg>
+                        </button>
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-800">Admin Dashboard</h2>
+                            <p class="text-sm text-slate-500">Welcome back, Administrator</p>
+                        </div>
+                    </div>
+
+                    <!-- Header Right -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Search -->
+                        <div class="relative hidden md:block">
+                            <input type="text" placeholder="Search..." class="form-input pl-10 pr-4 py-2 w-64" />
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Notifications -->
+                        <button class="relative p-2 rounded-md hover:bg-slate-100" onclick="toggleNotifications()">
+                            <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM11 19H6.5A2.5 2.5 0 014 16.5v-9A2.5 2.5 0 016.5 5h11A2.5 2.5 0 0120 7.5V11"/>
+                            </svg>
+                            <span class="absolute -top-1 -right-1 h-4 w-4 bg-error-500 text-white text-xs rounded-full flex items-center justify-center">3</span>
+                        </button>
+
+                        <!-- User Profile -->
+                        <div class="flex items-center space-x-3">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Admin Profile" class="w-8 h-8 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            <div class="hidden md:block">
+                                <p class="text-sm font-medium text-slate-800">John Anderson</p>
+                                <p class="text-xs text-slate-500">Administrator</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="flex-1 overflow-auto p-6">
+                <!-- KPI Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <!-- Total Students -->
+                    <div class="card p-6 hover:shadow-lg transition-all duration-200">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-slate-600">Total Students</p>
+                                <p class="text-3xl font-bold text-slate-800 mt-2">1,247</p>
+                                <p class="text-sm text-accent-600 mt-1">
+                                    <span class="inline-flex items-center">
+                                        <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+                                        </svg>
+                                        +12% from last month
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Attendance Rate -->
+                    <div class="card p-6 hover:shadow-lg transition-all duration-200">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-slate-600">Attendance Rate</p>
+                                <p class="text-3xl font-bold text-slate-800 mt-2">94.2%</p>
+                                <p class="text-sm text-accent-600 mt-1">
+                                    <span class="inline-flex items-center">
+                                        <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+                                        </svg>
+                                        +2.1% from yesterday
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fee Collection -->
+                    <div class="card p-6 hover:shadow-lg transition-all duration-200">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-slate-600">Fee Collection</p>
+                                <p class="text-3xl font-bold text-slate-800 mt-2">$847K</p>
+                                <p class="text-sm text-warning-600 mt-1">
+                                    <span class="inline-flex items-center">
+                                        <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                                        </svg>
+                                        -3% from target
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-warning-100 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-warning-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Teachers -->
+                    <div class="card p-6 hover:shadow-lg transition-all duration-200">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-slate-600">Active Teachers</p>
+                                <p class="text-3xl font-bold text-slate-800 mt-2">89</p>
+                                <p class="text-sm text-accent-600 mt-1">
+                                    <span class="inline-flex items-center">
+                                        <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+                                        </svg>
+                                        +5 new this month
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts and Analytics -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                    <!-- Enrollment Trends Chart -->
+                    <div class="card p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-lg font-semibold text-slate-800">Enrollment Trends</h3>
+                            <select class="text-sm border border-slate-300 rounded-md px-3 py-1">
+                                <option>Last 6 months</option>
+                                <option>Last year</option>
+                                <option>Last 2 years</option>
+                            </select>
+                        </div>
+                        <div class="h-64">
+                            <canvas id="enrollmentChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Academic Performance -->
+                    <div class="card p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-lg font-semibold text-slate-800">Academic Performance</h3>
+                            <select class="text-sm border border-slate-300 rounded-md px-3 py-1">
+                                <option>Current Term</option>
+                                <option>Previous Term</option>
+                                <option>Annual</option>
+                            </select>
+                        </div>
+                        <div class="h-64">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions and Notifications -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Recent Activities -->
+                    <div class="lg:col-span-2 card p-6">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-4">Recent Activities</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg">
+                                <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-slate-800">New student admission</p>
+                                    <p class="text-xs text-slate-500">Sarah Johnson enrolled in Grade 10-A</p>
+                                    <p class="text-xs text-slate-400 mt-1">2 hours ago</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg">
+                                <div class="w-8 h-8 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-4 h-4 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-slate-800">Fee payment received</p>
+                                    <p class="text-xs text-slate-500">$2,500 payment from Grade 9 students</p>
+                                    <p class="text-xs text-slate-400 mt-1">4 hours ago</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg">
+                                <div class="w-8 h-8 bg-warning-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-4 h-4 text-warning-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-slate-800">Attendance alert</p>
+                                    <p class="text-xs text-slate-500">Low attendance in Grade 8-B (78%)</p>
+                                    <p class="text-xs text-slate-400 mt-1">6 hours ago</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 text-sm text-primary-600 hover:text-primary-700 font-medium">
+                            View All Activities
+                        </button>
+                    </div>
+
+                    <!-- Urgent Notifications -->
+                    <div class="card p-6">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-4">Urgent Notifications</h3>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-error-50 border border-error-200 rounded-lg">
+                                <div class="flex items-start space-x-2">
+                                    <svg class="w-4 h-4 text-error-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <div>
+                                        <p class="text-sm font-medium text-error-800">Pending Approvals</p>
+                                        <p class="text-xs text-error-600">5 leave requests awaiting approval</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-3 bg-warning-50 border border-warning-200 rounded-lg">
+                                <div class="flex items-start space-x-2">
+                                    <svg class="w-4 h-4 text-warning-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <div>
+                                        <p class="text-sm font-medium text-warning-800">System Maintenance</p>
+                                        <p class="text-xs text-warning-600">Scheduled for tonight at 11 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-3 bg-primary-50 border border-primary-200 rounded-lg">
+                                <div class="flex items-start space-x-2">
+                                    <svg class="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <div>
+                                        <p class="text-sm font-medium text-primary-800">Exam Schedule</p>
+                                        <p class="text-xs text-primary-600">Mid-term exams start next week</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Events -->
+                <div class="mt-8 card p-6">
+                    <h3 class="text-lg font-semibold text-slate-800 mb-4">Upcoming Events</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="p-4 bg-gradient-to-r from-primary-50 to-primary-100 rounded-lg border border-primary-200">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
+                                    <span class="text-white font-bold text-sm">28</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-slate-800">Parent-Teacher Meeting</p>
+                                    <p class="text-sm text-slate-600">Aug 28, 2025 - 2:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-gradient-to-r from-accent-50 to-accent-100 rounded-lg border border-accent-200">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-accent-500 rounded-lg flex items-center justify-center">
+                                    <span class="text-white font-bold text-sm">30</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-slate-800">Science Fair</p>
+                                    <p class="text-sm text-slate-600">Aug 30, 2025 - 10:00 AM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-gradient-to-r from-secondary-50 to-secondary-100 rounded-lg border border-secondary-200">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-secondary-500 rounded-lg flex items-center justify-center">
+                                    <span class="text-white font-bold text-sm">02</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-slate-800">Sports Day</p>
+                                    <p class="text-sm text-slate-600">Sep 02, 2025 - 9:00 AM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <!-- New Admission Modal -->
+    <div id="admissionModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-2xl p-6 w-full max-w-md mx-4 animate-scale-in">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold text-slate-800">New Student Admission</h3>
+                <button onclick="closeModal(&quot;admissionModal&quot;)" class="text-slate-400 hover:text-slate-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="text-slate-600 mb-4">Quick admission form for new students.</p>
+            <div class="space-y-4">
+                <input type="text" placeholder="Student Name" class="form-input" />
+                <input type="text" placeholder="Parent Name" class="form-input" />
+                <select class="form-input">
+                    <option>Select Grade</option>
+                    <option>Grade 1</option>
+                    <option>Grade 2</option>
+                    <option>Grade 3</option>
+                </select>
+                <div class="flex space-x-3">
+                    <button onclick="closeModal(&quot;admissionModal&quot;)" class="flex-1 px-4 py-2 border border-slate-300 rounded-md text-slate-700 hover:bg-slate-50">Cancel</button>
+                    <button class="flex-1 btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-2xl p-6 w-full max-w-md mx-4 animate-scale-in">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold text-slate-800">Generate Report</h3>
+                <button onclick="closeModal(&quot;reportModal&quot;)" class="text-slate-400 hover:text-slate-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="text-slate-600 mb-4">Select report type and parameters.</p>
+            <div class="space-y-4">
+                <select class="form-input">
+                    <option>Attendance Report</option>
+                    <option>Academic Performance</option>
+                    <option>Fee Collection</option>
+                    <option>Teacher Performance</option>
+                </select>
+                <select class="form-input">
+                    <option>Current Month</option>
+                    <option>Last Month</option>
+                    <option>Current Term</option>
+                    <option>Academic Year</option>
+                </select>
+                <div class="flex space-x-3">
+                    <button onclick="closeModal('reportModal')" class="flex-1 px-4 py-2 border border-slate-300 rounded-md text-slate-700 hover:bg-slate-50">Cancel</button>
+                    <button class="flex-1 btn btn-primary">Generate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notice Modal -->
+    <div id="noticeModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-2xl p-6 w-full max-w-md mx-4 animate-scale-in">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold text-slate-800">Send Notice</h3>
+                <button onclick="closeModal(&quot;noticeModal&quot;)" class="text-slate-400 hover:text-slate-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="text-slate-600 mb-4">Send notice to students, teachers, or parents.</p>
+            <div class="space-y-4">
+                <input type="text" placeholder="Notice Title" class="form-input" />
+                <select class="form-input">
+                    <option>All Students</option>
+                    <option>All Teachers</option>
+                    <option>All Parents</option>
+                    <option>Specific Grade</option>
+                </select>
+                <textarea placeholder="Notice Message" rows="3" class="form-input"></textarea>
+                <div class="flex space-x-3">
+                    <button onclick="closeModal(&quot;noticeModal&quot;)" class="flex-1 px-4 py-2 border border-slate-300 rounded-md text-slate-700 hover:bg-slate-50">Cancel</button>
+                    <button class="flex-1 btn btn-primary">Send Notice</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Panel -->
+    <div id="notificationPanel" class="fixed top-16 right-6 w-80 bg-white rounded-lg shadow-modal border border-slate-200/20 hidden z-40 animate-slide-down">
+        <div class="p-4 border-b border-slate-200/20">
+            <h3 class="font-semibold text-slate-800">Notifications</h3>
+        </div>
+        <div class="max-h-96 overflow-y-auto">
+            <div class="p-4 border-b border-slate-100 hover:bg-slate-50">
+                <p class="text-sm font-medium text-slate-800">New student admission</p>
+                <p class="text-xs text-slate-500 mt-1">Sarah Johnson enrolled in Grade 10-A</p>
+                <p class="text-xs text-slate-400 mt-1">2 hours ago</p>
+            </div>
+            <div class="p-4 border-b border-slate-100 hover:bg-slate-50">
+                <p class="text-sm font-medium text-slate-800">Fee payment received</p>
+                <p class="text-xs text-slate-500 mt-1">$2,500 payment from Grade 9 students</p>
+                <p class="text-xs text-slate-400 mt-1">4 hours ago</p>
+            </div>
+            <div class="p-4 border-b border-slate-100 hover:bg-slate-50">
+                <p class="text-sm font-medium text-slate-800">Attendance alert</p>
+                <p class="text-xs text-slate-500 mt-1">Low attendance in Grade 8-B (78%)</p>
+                <p class="text-xs text-slate-400 mt-1">6 hours ago</p>
+            </div>
+        </div>
+        <div class="p-4 border-t border-slate-200/20">
+            <button class="w-full text-sm text-primary-600 hover:text-primary-700 font-medium">
+                View All Notifications
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Sidebar toggle functionality
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('-translate-x-full');
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Notification panel toggle
+        function toggleNotifications() {
+            const panel = document.getElementById('notificationPanel');
+            panel.classList.toggle('hidden');
+        }
+
+        // Close notification panel when clicking outside
+        document.addEventListener('click', function(event) {
+            const panel = document.getElementById('notificationPanel');
+            const button = event.target.closest('button');
+            
+            if (!panel.contains(event.target) && (!button || !button.onclick || button.onclick.toString().indexOf('toggleNotifications') === -1)) {
+                panel.classList.add('hidden');
+            }
+        });
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('userRole');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = 'login_screen.html';
+        }
+
+        // Chart.js initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            // Enrollment Trends Chart
+            const enrollmentCtx = document.getElementById('enrollmentChart').getContext('2d');
+            new Chart(enrollmentCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'New Enrollments',
+                        data: [45, 52, 38, 67, 73, 89],
+                        borderColor: '#2563EB',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(148, 163, 184, 0.1)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Academic Performance Chart
+            const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+            new Chart(performanceCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Excellent', 'Good', 'Average', 'Below Average'],
+                    datasets: [{
+                        data: [35, 40, 20, 5],
+                        backgroundColor: [
+                            '#059669',
+                            '#3B82F6',
+                            '#F59E0B',
+                            '#EF4444'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                usePointStyle: true
+                            }
+                        }
+                    }
+                }
+            });
+        });
+
+        // Check authentication
+        if (!localStorage.getItem('isLoggedIn') || localStorage.getItem('userRole') !== 'admin') {
+            window.location.href = 'login_screen.html';
+        }
+    </script>
+    <!-- Load Supabase config -->
+<script src="../config.js"></script>
+
+<!-- Supabase client wrapper -->
+<script type="module">
+  import { supabaseClient } from "../js/supabase.js";
+
+  // Example: check logged in user
+  async function checkUser() {
+    const user = await supabaseClient.getCurrentUser();
+    if (!user) {
+      alert("⚠️ Not logged in");
+      window.location.href = "login_screen.html";
+    }
+  }
+  checkUser();
+</script>
+
+</body>
+</html>

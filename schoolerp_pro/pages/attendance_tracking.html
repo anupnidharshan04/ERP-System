@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance Tracking - SchoolERP Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="icon" type="image/x-icon" href="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fschoolerp8473back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,<svg width=" 60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%232563EB" fill-opacity="0.1"><circle cx="30" cy="30" r="2"></circle></g></g>'); background-size: 60px 60px;"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-slate-200/20 shadow-card z-50">
+        <div class="px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-4">
+                    <button id="sidebarToggle" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors">
+                        <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h1 class="text-lg font-bold text-slate-800">SchoolERP Pro</h1>
+                            <p class="text-xs text-slate-500">Attendance Tracking</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Notifications -->
+                    <button class="relative p-2 rounded-lg hover:bg-slate-100 transition-colors">
+                        <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5-5 5-5h-5m-6 10v-2a6 6 0 10-12 0v2l-2 2h16l-2-2z"/>
+                        </svg>
+                        <span class="absolute -top-1 -right-1 w-3 h-3 bg-error-500 rounded-full"></span>
+                    </button>
+
+                    <!-- User Profile -->
+                    <div class="flex items-center space-x-3">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Teacher Profile" class="w-8 h-8 rounded-full object-cover border-2 border-primary-200" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div class="hidden md:block">
+                            <p class="text-sm font-medium text-slate-800">Ms. Sarah Johnson</p>
+                            <p class="text-xs text-slate-500">Mathematics Teacher</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed left-0 top-16 h-full w-64 bg-white/95 backdrop-blur-sm border-r border-slate-200/20 shadow-card transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-40">
+        <div class="p-6">
+            <nav class="space-y-2">
+                <a href="admin_dashboard.html" class="nav-item flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                
+                <a href="student_management.html" class="nav-item flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
+                    </svg>
+                    <span>Students</span>
+                </a>
+                
+                <a href="attendance_tracking.html" class="nav-item active flex items-center space-x-3 px-3 py-2 rounded-lg bg-primary-100 text-primary-700">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span>Attendance</span>
+                </a>
+                
+                <a href="academic_records_report_cards.html" class="nav-item flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <span>Academic Records</span>
+                </a>
+                
+                <a href="teacher_management.html" class="nav-item flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                    <span>Teachers</span>
+                </a>
+            </nav>
+
+            <!-- Class Selection -->
+            <div class="mt-8">
+                <h3 class="text-sm font-medium text-slate-700 mb-3">My Classes</h3>
+                <div class="space-y-1">
+                    <button class="w-full text-left px-3 py-2 text-sm rounded-lg bg-primary-50 text-primary-700 border border-primary-200">
+                        Grade 10-A Mathematics
+                    </button>
+                    <button class="w-full text-left px-3 py-2 text-sm rounded-lg text-slate-600 hover:bg-slate-50 transition-colors">
+                        Grade 10-B Mathematics
+                    </button>
+                    <button class="w-full text-left px-3 py-2 text-sm rounded-lg text-slate-600 hover:bg-slate-50 transition-colors">
+                        Grade 11-A Mathematics
+                    </button>
+                </div>
+            </div>
+
+            <!-- Logout -->
+            <div class="absolute bottom-6 left-6 right-6">
+                <a href="login_screen.html" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-error-50 hover:text-error-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                    </svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lg:ml-64 pt-16 min-h-screen">
+        <div class="p-6">
+            <!-- Page Header -->
+            <div class="mb-8">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div>
+                        <h1 class="text-2xl font-bold text-slate-800 mb-2">Attendance Tracking</h1>
+                        <p class="text-slate-600">Grade 10-A Mathematics • Today: August 26, 2025</p>
+                    </div>
+                    
+                    <!-- Date Selector and Actions -->
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input type="date" id="attendanceDate" value="2025-08-26" class="form-input text-sm" />
+                        <div class="flex gap-2">
+                            <button id="markAllPresent" class="btn btn-accent text-sm px-4 py-2">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Mark All Present
+                            </button>
+                            <button id="exportReport" class="btn bg-slate-600 text-white hover:bg-slate-700 text-sm px-4 py-2">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-4-4m4 4l4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                Export
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="card p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-slate-600 mb-1">Total Students</p>
+                            <p class="text-2xl font-bold text-slate-800">32</p>
+                        </div>
+                        <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-slate-600 mb-1">Present Today</p>
+                            <p class="text-2xl font-bold text-accent-600">28</p>
+                        </div>
+                        <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-accent-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-slate-600 mb-1">Absent Today</p>
+                            <p class="text-2xl font-bold text-error-600">3</p>
+                        </div>
+                        <div class="w-12 h-12 bg-error-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-error-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-slate-600 mb-1">Late Arrivals</p>
+                            <p class="text-2xl font-bold text-warning-600">1</p>
+                        </div>
+                        <div class="w-12 h-12 bg-warning-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-warning-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+                <!-- Attendance Table -->
+                <div class="xl:col-span-2">
+                    <div class="card">
+                        <div class="p-6 border-b border-slate-200/20">
+                            <div class="flex items-center justify-between">
+                                <h2 class="text-lg font-semibold text-slate-800">Class Roster</h2>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-sm text-slate-600">Quick Actions:</span>
+                                    <button class="text-xs px-2 py-1 bg-slate-100 text-slate-600 rounded hover:bg-slate-200 transition-colors">Ctrl+P</button>
+                                    <button class="text-xs px-2 py-1 bg-slate-100 text-slate-600 rounded hover:bg-slate-200 transition-colors">Ctrl+A</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-slate-50">
+                                    <tr>
+                                        <th class="text-left py-3 px-6 text-sm font-medium text-slate-700">Student</th>
+                                        <th class="text-center py-3 px-4 text-sm font-medium text-slate-700">Status</th>
+                                        <th class="text-center py-3 px-4 text-sm font-medium text-slate-700">Time</th>
+                                        <th class="text-left py-3 px-6 text-sm font-medium text-slate-700">Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="attendanceTable" class="divide-y divide-slate-200/20">
+                                    <!-- Student rows will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attendance Calendar and Analytics -->
+                <div class="space-y-6">
+                    <!-- Monthly Calendar -->
+                    <div class="card p-6">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-4">August 2025</h3>
+                        <div class="grid grid-cols-7 gap-1 text-center text-xs">
+                            <div class="font-medium text-slate-600 py-2">Sun</div>
+                            <div class="font-medium text-slate-600 py-2">Mon</div>
+                            <div class="font-medium text-slate-600 py-2">Tue</div>
+                            <div class="font-medium text-slate-600 py-2">Wed</div>
+                            <div class="font-medium text-slate-600 py-2">Thu</div>
+                            <div class="font-medium text-slate-600 py-2">Fri</div>
+                            <div class="font-medium text-slate-600 py-2">Sat</div>
+                            
+                            <!-- Calendar days -->
+                            <div class="py-2 text-slate-400"></div>
+                            <div class="py-2 text-slate-400"></div>
+                            <div class="py-2 text-slate-400"></div>
+                            <div class="py-2 text-slate-400"></div>
+                            <div class="py-2 text-slate-400">1</div>
+                            <div class="py-2 text-slate-400">2</div>
+                            <div class="py-2 text-slate-400">3</div>
+                            
+                            <div class="py-2 text-slate-600">4</div>
+                            <div class="py-2 bg-accent-100 text-accent-700 rounded">5</div>
+                            <div class="py-2 bg-accent-100 text-accent-700 rounded">6</div>
+                            <div class="py-2 bg-accent-100 text-accent-700 rounded">7</div>
+                            <div class="py-2 bg-accent-100 text-accent-700 rounded">8</div>
+                            <div class="py-2 bg-accent-100 text-accent-700 rounded">9</div>
+                            <div class="py-2 text-slate-600">10</div>
+                            
+                            <div class="py-2 text-slate-600">11</div>
+                            <div class="py-2 bg-accent-100 text-accent-700 rounded">12</div>
+                            <div class="py-2 bg-accent-100 text-accent-700 rounded">13</div>
+                            <div class="py-2 bg-accent-100 text-accent-700 rounded">14</div>
+                            <div class="py-2 bg-warning-100 text-warning-700 rounded">15</div>
+                            <div class="py-2 bg-accent-100 text-accent-700 rounded">16</div>
+                            <div class="py-2 text-slate-600">17</div>
+                            
+                            <div class="py-2 text-slate-600">18</div>
+                            <div class="py-2 bg-accent-100 text-accent-700 rounded">19</div>
+                            <div class="py-2 bg-accent-100 text-accent-700 rounded">20</div>
+                            <div class="py-2 bg-accent-100 text-accent-700 rounded">21</div>
+                            <div class="py-2 bg-accent-100 text-accent-700 rounded">22</div>
+                            <div class="py-2 bg-accent-100 text-accent-700 rounded">23</div>
+                            <div class="py-2 text-slate-600">24</div>
+                            
+                            <div class="py-2 text-slate-600">25</div>
+                            <div class="py-2 bg-primary-100 text-primary-700 rounded font-medium">26</div>
+                            <div class="py-2 text-slate-400">27</div>
+                            <div class="py-2 text-slate-400">28</div>
+                            <div class="py-2 text-slate-400">29</div>
+                            <div class="py-2 text-slate-400">30</div>
+                            <div class="py-2 text-slate-400">31</div>
+                        </div>
+                        
+                        <div class="mt-4 flex items-center justify-between text-xs">
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-3 h-3 bg-accent-100 rounded"></div>
+                                    <span class="text-slate-600">Good (>90%)</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-3 h-3 bg-warning-100 rounded"></div>
+                                    <span class="text-slate-600">Fair (70-90%)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Attendance Trends Chart -->
+                    <div class="card p-6">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-4">Weekly Trends</h3>
+                        <div class="h-48">
+                            <canvas id="attendanceChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="card p-6">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-4">This Month</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-600">Average Attendance</span>
+                                <span class="text-sm font-medium text-accent-600">87.5%</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-600">Best Day</span>
+                                <span class="text-sm font-medium text-slate-800">Aug 9 (96.9%)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-600">Most Absences</span>
+                                <span class="text-sm font-medium text-slate-800">Aug 15 (6 students)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Overlay -->
+    <div id="sidebarOverlay" class="fixed inset-0 bg-black/50 z-30 lg:hidden hidden"></div>
+
+    <script>
+        // Sample student data
+        const students = [
+            { id: 1, name: "Emma Johnson", photo: "https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3", status: "present", time: "08:15", notes: "" },
+            { id: 2, name: "Liam Smith", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3", status: "present", time: "08:12", notes: "" },
+            { id: 3, name: "Olivia Brown", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3", status: "absent", time: "", notes: "Sick leave" },
+            { id: 4, name: "Noah Davis", photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3", status: "present", time: "08:18", notes: "" },
+            { id: 5, name: "Ava Wilson", photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2788&auto=format&fit=crop&ixlib=rb-4.0.3", status: "late", time: "08:35", notes: "Traffic delay" },
+            { id: 6, name: "William Miller", photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3", status: "present", time: "08:10", notes: "" },
+            { id: 7, name: "Sophia Garcia", photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3", status: "present", time: "08:14", notes: "" },
+            { id: 8, name: "James Martinez", photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3", status: "absent", time: "", notes: "Family emergency" },
+            { id: 9, name: "Isabella Rodriguez", photo: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3", status: "present", time: "08:16", notes: "" },
+            { id: 10, name: "Benjamin Lee", photo: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3", status: "present", time: "08:13", notes: "" }
+        ];
+
+        // Sidebar toggle functionality
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+            sidebarOverlay.classList.toggle('hidden');
+        });
+
+        sidebarOverlay.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+        });
+
+        // Populate attendance table
+        function populateAttendanceTable() {
+            const tableBody = document.getElementById('attendanceTable');
+            tableBody.innerHTML = '';
+
+            students.forEach(student => {
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-slate-50 transition-colors';
+                
+                row.innerHTML = `
+                    <td class="py-4 px-6">
+                        <div class="flex items-center space-x-3">
+                            <img src="${student.photo}" alt="${student.name}" 
+                                 class="w-10 h-10 rounded-full object-cover border-2 border-slate-200"
+                                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            <div>
+                                <p class="font-medium text-slate-800">${student.name}</p>
+                                <p class="text-sm text-slate-500">ID: ${student.id.toString().padStart(3, '0')}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="py-4 px-4 text-center">
+                        <div class="flex items-center justify-center space-x-2">
+                            <button onclick="updateStatus(${student.id}, 'present')" 
+                                    class="w-8 h-8 rounded-full flex items-center justify-center transition-colors ${student.status === 'present' ? 'bg-accent-100 text-accent-600' : 'bg-slate-100 text-slate-400 hover:bg-accent-50'}">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </button>
+                            <button onclick="updateStatus(${student.id}, 'late')" 
+                                    class="w-8 h-8 rounded-full flex items-center justify-center transition-colors ${student.status === 'late' ? 'bg-warning-100 text-warning-600' : 'bg-slate-100 text-slate-400 hover:bg-warning-50'}">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </button>
+                            <button onclick="updateStatus(${student.id}, 'absent')" 
+                                    class="w-8 h-8 rounded-full flex items-center justify-center transition-colors ${student.status === 'absent' ? 'bg-error-100 text-error-600' : 'bg-slate-100 text-slate-400 hover:bg-error-50'}">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                    <td class="py-4 px-4 text-center">
+                        <span class="text-sm ${student.time ? 'text-slate-800' : 'text-slate-400'}">${student.time || '--:--'}</span>
+                    </td>
+                    <td class="py-4 px-6">
+                        <input type="text" value="${student.notes}" 
+                               onchange="updateNotes(${student.id}, this.value)"
+                               class="w-full text-sm border-none bg-transparent focus:bg-white focus:border focus:border-slate-300 rounded px-2 py-1 transition-all"
+                               placeholder="Add notes...">
+                    </td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Update student status
+        function updateStatus(studentId, status) {
+            const student = students.find(s => s.id === studentId);
+            if (student) {
+                student.status = status;
+                if (status === 'present' || status === 'late') {
+                    student.time = new Date().toLocaleTimeString('en-US', { 
+                        hour12: false, 
+                        hour: '2-digit', 
+                        minute: '2-digit' 
+                    });
+                } else {
+                    student.time = '';
+                }
+                populateAttendanceTable();
+                updateStatistics();
+            }
+        }
+
+        // Update student notes
+        function updateNotes(studentId, notes) {
+            const student = students.find(s => s.id === studentId);
+            if (student) {
+                student.notes = notes;
+            }
+        }
+
+        // Update statistics
+        function updateStatistics() {
+            const present = students.filter(s => s.status === 'present').length;
+            const absent = students.filter(s => s.status === 'absent').length;
+            const late = students.filter(s => s.status === 'late').length;
+            
+            // Update stat cards (simplified for demo)
+            console.log(`Present: ${present}, Absent: ${absent}, Late: ${late}`);
+        }
+
+        // Mark all present
+        document.getElementById('markAllPresent').addEventListener('click', () => {
+            students.forEach(student => {
+                if (student.status !== 'present') {
+                    student.status = 'present';
+                    student.time = new Date().toLocaleTimeString('en-US', { 
+                        hour12: false, 
+                        hour: '2-digit', 
+                        minute: '2-digit' 
+                    });
+                }
+            });
+            populateAttendanceTable();
+            updateStatistics();
+        });
+
+        // Export functionality
+        document.getElementById('exportReport').addEventListener('click', () => {
+            alert('Attendance report exported successfully!');
+        });
+
+        // Initialize Chart.js
+        const ctx = document.getElementById('attendanceChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                datasets: [{
+                    label: 'Attendance %',
+                    data: [85, 92, 88, 94, 87],
+                    borderColor: '#059669',
+                    backgroundColor: 'rgba(5, 150, 105, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: {
+                            color: 'rgba(148, 163, 184, 0.1)'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // Initialize the page
+        populateAttendanceTable();
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                document.getElementById('markAllPresent').click();
+            }
+            if (e.ctrlKey && e.key === 'a') {
+                e.preventDefault();
+                // Focus on first student row
+                const firstRow = document.querySelector('#attendanceTable tr');
+                if (firstRow) {
+                    firstRow.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

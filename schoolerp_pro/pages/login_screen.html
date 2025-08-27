@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - SchoolERP Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="icon" type="image/x-icon" href="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fschoolerp8473back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex items-center justify-center p-4">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,<svg width=" 60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%232563EB" fill-opacity="0.1"><circle cx="30" cy="30" r="2"></circle></g></g>'); background-size: 60px 60px;"></div>
+    </div>
+
+    <!-- Main Login Container -->
+    <div class="relative w-full max-w-md">
+        <!-- Login Card -->
+        <div class="bg-white rounded-2xl shadow-modal border border-slate-200/20 p-8 animate-fade-in">
+            <!-- School Logo and Branding -->
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-2xl mb-4">
+                    <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                </div>
+                <h1 class="text-2xl font-bold text-slate-800 mb-2">SchoolERP Pro</h1>
+                <p class="text-slate-600">Welcome back! Please sign in to your account</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="space-y-6">
+                <!-- Role Selection -->
+                <div>
+                    <label for="role" class="block text-sm font-medium text-slate-700 mb-2">Select Role</label>
+                    <select id="role" name="role" class="form-input appearance-none bg-white" required>
+                        <option value>Choose your role</option>
+                        <option value="admin">Administrator</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="student">Student</option>
+                        <option value="parent">Parent</option>
+                    </select>
+                    <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Username/Email Field -->
+                <div>
+                    <label for="username" class="block text-sm font-medium text-slate-700 mb-2">Username or Email</label>
+                    <div class="relative">
+                        <input type="text" id="username" name="username" class="form-input pl-10" placeholder="Enter your username or email" required />
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Password Field -->
+                <div>
+                    <label for="password" class="block text-sm font-medium text-slate-700 mb-2">Password</label>
+                    <div class="relative">
+                        <input type="password" id="password" name="password" class="form-input pl-10 pr-10" placeholder="Enter your password" required />
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                            </svg>
+                        </div>
+                        <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                            <svg id="eyeIcon" class="w-4 h-4 text-slate-400 hover:text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Remember Me and Forgot Password -->
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember" name="remember" type="checkbox" class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-slate-300 rounded" />
+                        <label for="remember" class="ml-2 block text-sm text-slate-700">Remember me</label>
+                    </div>
+                    <div class="text-sm">
+                        <a href="javascript:void(0)" class="font-medium text-primary-600 hover:text-primary-500 transition-colors">Forgot password?</a>
+                    </div>
+                </div>
+
+                <!-- Sign In Button -->
+                <button type="submit" id="signInBtn" class="w-full btn btn-primary py-3 text-base font-semibold relative">
+                    <span id="btnText">Sign In</span>
+                    <div id="loadingSpinner" class="hidden absolute inset-0 flex items-center justify-center">
+                        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+                        </svg>
+                    </div>
+                </button>
+
+                <!-- Error Message -->
+                <div id="errorMessage" class="hidden p-3 bg-error-50 border border-error-200 rounded-md">
+                    <div class="flex">
+                        <svg class="w-5 h-5 text-error-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <p class="text-sm text-error-700" id="errorText"></p>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Demo Credentials -->
+            <div class="mt-6 p-4 bg-slate-50 rounded-lg border border-slate-200">
+                <h3 class="text-sm font-medium text-slate-700 mb-2">Demo Credentials:</h3>
+                <div class="text-xs text-slate-600 space-y-1">
+                    <div><strong>Admin:</strong> admin@school.edu / admin123</div>
+                    <div><strong>Teacher:</strong> teacher@school.edu / teacher123</div>
+                    <div><strong>Student:</strong> student@school.edu / student123</div>
+                    <div><strong>Parent:</strong> parent@school.edu / parent123</div>
+                </div>
+            </div>
+
+            <!-- Language Selector -->
+            <div class="mt-6 text-center">
+                <select class="text-sm border-none bg-transparent text-slate-500 focus:outline-none">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Security Trust Indicators -->
+        <div class="mt-6 text-center">
+            <div class="flex items-center justify-center space-x-4 text-xs text-slate-500">
+                <div class="flex items-center">
+                    <svg class="w-4 h-4 text-accent-500 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                    </svg>
+                    SSL Secured
+                </div>
+                <div class="flex items-center">
+                    <svg class="w-4 h-4 text-accent-500 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    Data Protected
+                </div>
+            </div>
+            <p class="mt-2 text-xs text-slate-400">© 2025 SchoolERP Pro. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Password toggle functionality
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
+                `;
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                `;
+            }
+        });
+
+        // Form submission handling
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const role = document.getElementById('role').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const signInBtn = document.getElementById('signInBtn');
+            const btnText = document.getElementById('btnText');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const errorMessage = document.getElementById('errorMessage');
+            const errorText = document.getElementById('errorText');
+
+            // Hide previous error
+            errorMessage.classList.add('hidden');
+
+            // Validation
+            if (!role || !username || !password) {
+                showError('Please fill in all fields');
+                return;
+            }
+
+            // Show loading state
+            btnText.classList.add('opacity-0');
+            loadingSpinner.classList.remove('hidden');
+            signInBtn.disabled = true;
+
+            // Mock authentication
+            setTimeout(() => {
+                const validCredentials = {
+                    'admin': { email: 'admin@school.edu', password: 'admin123' },
+                    'teacher': { email: 'teacher@school.edu', password: 'teacher123' },
+                    'student': { email: 'student@school.edu', password: 'student123' },
+                    'parent': { email: 'parent@school.edu', password: 'parent123' }
+                };
+
+                if (validCredentials[role] && 
+                    (username === validCredentials[role].email || username === role) && 
+                    password === validCredentials[role].password) {
+                    
+                    // Store user session
+                    localStorage.setItem('userRole', role);
+                    localStorage.setItem('userEmail', validCredentials[role].email);
+                    localStorage.setItem('isLoggedIn', 'true');
+                    
+                    // Redirect based on role
+                    if (role === 'admin') {
+                        window.location.href = 'admin_dashboard.html';
+                    } else if (role === 'teacher') {
+                        window.location.href = 'teacher_management.html';
+                    } else if (role === 'student') {
+                        window.location.href = 'academic_records_report_cards.html';
+                    } else if (role === 'parent') {
+                        window.location.href = 'attendance_tracking.html';
+                    }
+                } else {
+                    showError('Invalid credentials. Please check your username, password, and role.');
+                    resetButton();
+                }
+            }, 1500);
+
+            function showError(message) {
+                errorText.textContent = message;
+                errorMessage.classList.remove('hidden');
+            }
+
+            function resetButton() {
+                btnText.classList.remove('opacity-0');
+                loadingSpinner.classList.add('hidden');
+                signInBtn.disabled = false;
+            }
+        });
+
+        // Real-time form validation
+        document.getElementById('username').addEventListener('input', function() {
+            const errorMessage = document.getElementById('errorMessage');
+            if (!errorMessage.classList.contains('hidden')) {
+                errorMessage.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('password').addEventListener('input', function() {
+            const errorMessage = document.getElementById('errorMessage');
+            if (!errorMessage.classList.contains('hidden')) {
+                errorMessage.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('role').addEventListener('change', function() {
+            const errorMessage = document.getElementById('errorMessage');
+            if (!errorMessage.classList.contains('hidden')) {
+                errorMessage.classList.add('hidden');
+            }
+        });
+    </script>
+    <!-- Load Supabase config -->
+<script src="../config.js"></script>
+
+<!-- Supabase client wrapper -->
+<script type="module">
+  import { supabaseClient } from "../js/supabase.js";
+
+  document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    try {
+      const result = await supabaseClient.signIn(email, password);
+      if (result.user) {
+        alert("✅ Login successful!");
+        window.location.href = "admin_dashboard.html";
+      }
+    } catch (err) {
+      alert("❌ Login failed: " + err.message);
+    }
+  });
+</script>
+
+</body>
+</html>

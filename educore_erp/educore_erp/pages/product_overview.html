@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Overview - EduCore ERP | Comprehensive School Management Platform</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Explore EduCore's comprehensive module ecosystem - Student Information Systems, Learning Management, Communication Hub, Analytics Dashboard, and Administrative Tools unified in one intelligent platform." />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Feducoreer8912back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-soft sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-10 w-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#1E3A8A"/>
+                            <path d="M12 14h16v2H12v-2zm0 4h16v2H12v-2zm0 4h12v2H12v-2z" fill="white"/>
+                            <circle cx="30" cy="12" r="4" fill="#059669"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-bold text-primary">EduCore</h1>
+                        <p class="text-xs text-text-secondary">ERP</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="homepage.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Home</a>
+                        <a href="product_overview.html" class="text-primary font-semibold px-3 py-2 rounded-md text-sm">Product</a>
+                        <a href="solutions_by_institution_type.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Solutions</a>
+                        <a href="pricing_plans.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">Pricing</a>
+                        <a href="about_edu_core.html" class="text-text-secondary hover:text-primary transition-smooth px-3 py-2 rounded-md text-sm">About</a>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="demo_request.html" class="btn-primary">Request Demo</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-text-secondary hover:text-primary focus:outline-none focus:text-primary transition-smooth" onclick="toggleMobileMenu()">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-neutral-200">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-smooth block px-3 py-2 rounded-md text-base">Home</a>
+                    <a href="product_overview.html" class="text-primary font-semibold block px-3 py-2 rounded-md text-base">Product</a>
+                    <a href="solutions_by_institution_type.html" class="text-text-secondary hover:text-primary transition-smooth block px-3 py-2 rounded-md text-base">Solutions</a>
+                    <a href="pricing_plans.html" class="text-text-secondary hover:text-primary transition-smooth block px-3 py-2 rounded-md text-base">Pricing</a>
+                    <a href="about_edu_core.html" class="text-text-secondary hover:text-primary transition-smooth block px-3 py-2 rounded-md text-base">About</a>
+                    <a href="demo_request.html" class="btn-primary block text-center mt-4">Request Demo</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Product Introduction -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-secondary-50 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#1E3A8A" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)"/>
+            </svg>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+            <div class="text-center">
+                <h1 class="text-4xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
+                    The Complete 
+                    <span class="text-gradient">Educational Ecosystem</span>
+                </h1>
+                <p class="text-xl text-text-secondary mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Discover how EduCore's interconnected modules transform every aspect of school administration, 
+                    from student records to parent communication, creating seamless workflows that save time and improve outcomes.
+                </p>
+
+                <!-- Quick Navigation Pills -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button onclick="scrollToSection('system-map')" class="bg-white text-primary px-6 py-3 rounded-full font-semibold shadow-soft hover:shadow-elevation transition-smooth">
+                        System Overview
+                    </button>
+                    <button onclick="scrollToSection('core-modules')" class="bg-white text-primary px-6 py-3 rounded-full font-semibold shadow-soft hover:shadow-elevation transition-smooth">
+                        Core Modules
+                    </button>
+                    <button onclick="scrollToSection('workflows')" class="bg-white text-primary px-6 py-3 rounded-full font-semibold shadow-soft hover:shadow-elevation transition-smooth">
+                        Workflows
+                    </button>
+                    <button onclick="scrollToSection('integrations')" class="bg-white text-primary px-6 py-3 rounded-full font-semibold shadow-soft hover:shadow-elevation transition-smooth">
+                        Integrations
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual System Map -->
+    <section id="system-map" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+                    Unified Platform Architecture
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    See how all modules work together as one intelligent system, sharing data seamlessly to eliminate silos and reduce duplicate work.
+                </p>
+            </div>
+
+            <!-- Interactive System Map -->
+            <div class="relative bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8 lg:p-12">
+                <div class="grid lg:grid-cols-3 gap-8 items-center">
+                    <!-- Left Column - Input Systems -->
+                    <div class="space-y-6">
+                        <div class="module-card bg-primary-100 hover:bg-primary-200 transition-smooth cursor-pointer" onclick="highlightModule('student-info')">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-primary">Student Information</h3>
+                                    <p class="text-sm text-text-secondary">Complete student profiles</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="module-card bg-secondary-100 hover:bg-secondary-200 transition-smooth cursor-pointer" onclick="highlightModule('learning-mgmt')">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-secondary">Learning Management</h3>
+                                    <p class="text-sm text-text-secondary">Curriculum & assessments</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="module-card bg-accent-100 hover:bg-accent-200 transition-smooth cursor-pointer" onclick="highlightModule('communication')">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-accent">Communication Hub</h3>
+                                    <p class="text-sm text-text-secondary">Parent-teacher messaging</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Center - Core System -->
+                    <div class="text-center">
+                        <div class="relative">
+                            <div class="w-32 h-32 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 shadow-elevation">
+                                <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-primary mb-2">EduCore Engine</h3>
+                            <p class="text-text-secondary">Intelligent data processing & automation</p>
+                            
+                            <!-- Connection Lines -->
+                            <div class="absolute top-16 -left-16 w-16 h-0.5 bg-primary opacity-30"></div>
+                            <div class="absolute top-16 -right-16 w-16 h-0.5 bg-primary opacity-30"></div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Output Systems -->
+                    <div class="space-y-6">
+                        <div class="module-card bg-neutral-100 hover:bg-neutral-200 transition-smooth cursor-pointer" onclick="highlightModule('analytics')">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-neutral-600 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-neutral-700">Analytics Dashboard</h3>
+                                    <p class="text-sm text-text-secondary">Performance insights</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="module-card bg-primary-100 hover:bg-primary-200 transition-smooth cursor-pointer" onclick="highlightModule('admin-tools')">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-primary">Administrative Tools</h3>
+                                    <p class="text-sm text-text-secondary">Operations management</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="module-card bg-secondary-100 hover:bg-secondary-200 transition-smooth cursor-pointer" onclick="highlightModule('reporting')">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-secondary">Compliance Reporting</h3>
+                                    <p class="text-sm text-text-secondary">Automated reports</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Modules Deep Dive -->
+    <section id="core-modules" class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+                    Explore Each Module in Detail
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Click on any module to see its specific capabilities, features, and how it integrates with the rest of the system.
+                </p>
+            </div>
+
+            <!-- Module Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button onclick="showModule('student-info')" class="module-tab active bg-primary text-white px-6 py-3 rounded-lg font-semibold transition-smooth" data-module="student-info">
+                    Student Information
+                </button>
+                <button onclick="showModule('learning-mgmt')" class="module-tab bg-white text-primary px-6 py-3 rounded-lg font-semibold border border-primary hover:bg-primary hover:text-white transition-smooth" data-module="learning-mgmt">
+                    Learning Management
+                </button>
+                <button onclick="showModule('communication')" class="module-tab bg-white text-primary px-6 py-3 rounded-lg font-semibold border border-primary hover:bg-primary hover:text-white transition-smooth" data-module="communication">
+                    Communication Hub
+                </button>
+                <button onclick="showModule('analytics')" class="module-tab bg-white text-primary px-6 py-3 rounded-lg font-semibold border border-primary hover:bg-primary hover:text-white transition-smooth" data-module="analytics">
+                    Analytics Dashboard
+                </button>
+                <button onclick="showModule('admin-tools')" class="module-tab bg-white text-primary px-6 py-3 rounded-lg font-semibold border border-primary hover:bg-primary hover:text-white transition-smooth" data-module="admin-tools">
+                    Administrative Tools
+                </button>
+            </div>
+
+            <!-- Module Content -->
+            <div class="module-content">
+                <!-- Student Information Module -->
+                <div id="student-info-content" class="module-panel active">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary mb-4">Complete Student Profiles</h3>
+                            <p class="text-text-secondary mb-6">
+                                Centralized student records that grow with each learner, providing a 360-degree view of academic progress, 
+                                behavioral patterns, and individual needs.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-primary">Automated Enrollment</h4>
+                                        <p class="text-sm text-text-secondary">Streamlined registration with document verification and family linking</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-primary">Real-time Attendance</h4>
+                                        <p class="text-sm text-text-secondary">Smart attendance tracking with automatic parent notifications</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-primary">Medical & Emergency Records</h4>
+                                        <p class="text-sm text-text-secondary">Secure health information with emergency contact management</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl shadow-elevation p-6">
+                            <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&h=400&fit=crop" alt="Student Information Dashboard" class="w-full h-64 object-cover rounded-lg mb-4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-primary">Active Students</span>
+                                    <span class="text-2xl font-bold text-secondary">1,247</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-primary">Attendance Rate</span>
+                                    <span class="text-2xl font-bold text-secondary">96.8%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-primary">Data Accuracy</span>
+                                    <span class="text-2xl font-bold text-secondary">99.2%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Management Module -->
+                <div id="learning-mgmt-content" class="module-panel hidden">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-secondary mb-4">Intelligent Learning Management</h3>
+                            <p class="text-text-secondary mb-6">
+                                Comprehensive curriculum management with automated grading, assignment distribution, 
+                                and personalized learning path recommendations.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-secondary">Smart Gradebook</h4>
+                                        <p class="text-sm text-text-secondary">Automated calculations with customizable grading scales and rubrics</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-secondary">Assignment Management</h4>
+                                        <p class="text-sm text-text-secondary">Digital assignment distribution with plagiarism detection</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-secondary">Curriculum Mapping</h4>
+                                        <p class="text-sm text-text-secondary">Standards alignment with progress tracking and gap analysis</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl shadow-elevation p-6">
+                            <img src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?w=600&h=400&fit=crop" alt="Learning Management Interface" class="w-full h-64 object-cover rounded-lg mb-4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-secondary">Assignments Graded</span>
+                                    <span class="text-2xl font-bold text-primary">15,432</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-secondary">Time Saved Weekly</span>
+                                    <span class="text-2xl font-bold text-primary">12 hrs</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-secondary">Student Engagement</span>
+                                    <span class="text-2xl font-bold text-primary">94%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Communication Hub Module -->
+                <div id="communication-content" class="module-panel hidden">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-accent mb-4">Seamless Communication Hub</h3>
+                            <p class="text-text-secondary mb-6">
+                                Multi-channel communication platform connecting teachers, parents, and students with 
+                                automated notifications and real-time messaging capabilities.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-accent rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-accent">Parent Portal</h4>
+                                        <p class="text-sm text-text-secondary">Real-time access to grades, attendance, and school announcements</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-accent rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-accent">Smart Notifications</h4>
+                                        <p class="text-sm text-text-secondary">Automated alerts for attendance, grades, and important events</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-accent rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-accent">Conference Scheduling</h4>
+                                        <p class="text-sm text-text-secondary">Automated parent-teacher conference booking with calendar integration</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl shadow-elevation p-6">
+                            <img src="https://images.pixabay.com/photo/2020/04/28/13/17/communication-5101044_1280.jpg?w=600&h=400&fit=crop" alt="Communication Dashboard" class="w-full h-64 object-cover rounded-lg mb-4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-accent">Messages Sent</span>
+                                    <span class="text-2xl font-bold text-primary">8,945</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-accent">Response Rate</span>
+                                    <span class="text-2xl font-bold text-primary">98.2%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-accent">Parent Engagement</span>
+                                    <span class="text-2xl font-bold text-primary">89%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Dashboard Module -->
+                <div id="analytics-content" class="module-panel hidden">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-neutral-700 mb-4">Intelligent Analytics Dashboard</h3>
+                            <p class="text-text-secondary mb-6">
+                                Comprehensive data visualization and insights that transform raw educational data into 
+                                actionable intelligence for improved decision-making.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-neutral-600 rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-neutral-700">Performance Analytics</h4>
+                                        <p class="text-sm text-text-secondary">Real-time student performance tracking with predictive insights</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-neutral-600 rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-neutral-700">Custom Reports</h4>
+                                        <p class="text-sm text-text-secondary">Drag-and-drop report builder with automated scheduling</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-neutral-600 rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-neutral-700">Trend Analysis</h4>
+                                        <p class="text-sm text-text-secondary">Historical data analysis with forecasting capabilities</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl shadow-elevation p-6">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Analytics Dashboard" class="w-full h-64 object-cover rounded-lg mb-4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-neutral-600">Data Points Analyzed</span>
+                                    <span class="text-2xl font-bold text-primary">2.4M</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-neutral-600">Reports Generated</span>
+                                    <span class="text-2xl font-bold text-primary">1,234</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-neutral-600">Accuracy Rate</span>
+                                    <span class="text-2xl font-bold text-primary">99.7%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Administrative Tools Module -->
+                <div id="admin-tools-content" class="module-panel hidden">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary mb-4">Comprehensive Administrative Tools</h3>
+                            <p class="text-text-secondary mb-6">
+                                Complete operational management suite covering scheduling, financial management, 
+                                compliance reporting, and staff administration.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-primary">Smart Scheduling</h4>
+                                        <p class="text-sm text-text-secondary">AI-powered timetable optimization with conflict resolution</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-primary">Financial Management</h4>
+                                        <p class="text-sm text-text-secondary">Integrated billing, fee collection, and budget tracking</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-primary">Compliance Automation</h4>
+                                        <p class="text-sm text-text-secondary">Automated regulatory reporting with audit trail management</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl shadow-elevation p-6">
+                            <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?w=600&h=400&fit=crop" alt="Administrative Dashboard" class="w-full h-64 object-cover rounded-lg mb-4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-primary">Admin Tasks Automated</span>
+                                    <span class="text-2xl font-bold text-secondary">85%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-primary">Processing Time Reduced</span>
+                                    <span class="text-2xl font-bold text-secondary">67%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-primary">Compliance Score</span>
+                                    <span class="text-2xl font-bold text-secondary">100%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-World Workflows -->
+    <section id="workflows" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+                    Day-in-the-Life Workflows
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    See how EduCore transforms daily routines for different user types, making complex tasks simple and efficient.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Administrator Workflow -->
+                <div class="card">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-2">School Administrator</h3>
+                        <p class="text-text-secondary text-sm">Morning routine streamlined</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="workflow-step">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-semibold">1</div>
+                                <div>
+                                    <h4 class="font-medium text-primary">Dashboard Overview</h4>
+                                    <p class="text-xs text-text-secondary">Instant school health snapshot</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-semibold">2</div>
+                                <div>
+                                    <h4 class="font-medium text-primary">Attendance Review</h4>
+                                    <p class="text-xs text-text-secondary">Automated alerts for absences</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-semibold">3</div>
+                                <div>
+                                    <h4 class="font-medium text-primary">Staff Coordination</h4>
+                                    <p class="text-xs text-text-secondary">One-click communication</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-semibold">4</div>
+                                <div>
+                                    <h4 class="font-medium text-primary">Report Generation</h4>
+                                    <p class="text-xs text-text-secondary">Automated compliance reports</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-4 border-t border-neutral-200">
+                        <div class="text-center">
+                            <span class="text-2xl font-bold text-secondary">3.5 hrs</span>
+                            <p class="text-xs text-text-secondary">Time saved daily</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher Workflow -->
+                <div class="card">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Classroom Teacher</h3>
+                        <p class="text-text-secondary text-sm">Teaching workflow optimized</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="workflow-step">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center text-sm font-semibold">1</div>
+                                <div>
+                                    <h4 class="font-medium text-secondary">Lesson Planning</h4>
+                                    <p class="text-xs text-text-secondary">Curriculum-aligned templates</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center text-sm font-semibold">2</div>
+                                <div>
+                                    <h4 class="font-medium text-secondary">Digital Attendance</h4>
+                                    <p class="text-xs text-text-secondary">One-tap attendance taking</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center text-sm font-semibold">3</div>
+                                <div>
+                                    <h4 class="font-medium text-secondary">Assignment Distribution</h4>
+                                    <p class="text-xs text-text-secondary">Instant digital delivery</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center text-sm font-semibold">4</div>
+                                <div>
+                                    <h4 class="font-medium text-secondary">Parent Communication</h4>
+                                    <p class="text-xs text-text-secondary">Automated progress updates</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-4 border-t border-neutral-200">
+                        <div class="text-center">
+                            <span class="text-2xl font-bold text-primary">2.8 hrs</span>
+                            <p class="text-xs text-text-secondary">Time saved weekly</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parent Workflow -->
+                <div class="card">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-accent mb-2">Engaged Parent</h3>
+                        <p class="text-text-secondary text-sm">Stay connected effortlessly</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="workflow-step">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center text-sm font-semibold">1</div>
+                                <div>
+                                    <h4 class="font-medium text-accent">Morning Check-in</h4>
+                                    <p class="text-xs text-text-secondary">Real-time attendance alerts</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center text-sm font-semibold">2</div>
+                                <div>
+                                    <h4 class="font-medium text-accent">Grade Monitoring</h4>
+                                    <p class="text-xs text-text-secondary">Instant grade notifications</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center text-sm font-semibold">3</div>
+                                <div>
+                                    <h4 class="font-medium text-accent">Teacher Communication</h4>
+                                    <p class="text-xs text-text-secondary">Direct messaging platform</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center text-sm font-semibold">4</div>
+                                <div>
+                                    <h4 class="font-medium text-accent">Event Planning</h4>
+                                    <p class="text-xs text-text-secondary">Conference scheduling</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-4 border-t border-neutral-200">
+                        <div class="text-center">
+                            <span class="text-2xl font-bold text-secondary">95%</span>
+                            <p class="text-xs text-text-secondary">Engagement increase</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customization & Adaptability -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+                    Adapts to Your Institution Type
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    EduCore automatically configures itself based on your school type, size, and specific requirements.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Small Private Schools -->
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-primary mb-2">Small Private Schools</h3>
+                    <p class="text-text-secondary text-sm mb-4">Simplified interface with essential features for schools under 500 students.</p>
+                    <ul class="text-xs text-text-secondary space-y-1">
+                        <li>• Basic student records</li>
+                        <li>• Parent communication</li>
+                        <li>• Simple gradebook</li>
+                        <li>• Financial tracking</li>
+                    </ul>
+                </div>
+
+                <!-- Large Public Districts -->
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-secondary mb-2">Large Public Districts</h3>
+                    <p class="text-text-secondary text-sm mb-4">Enterprise-grade features for districts with multiple schools and thousands of students.</p>
+                    <ul class="text-xs text-text-secondary space-y-1">
+                        <li>• Multi-school management</li>
+                        <li>• Advanced analytics</li>
+                        <li>• State reporting</li>
+                        <li>• District-wide policies</li>
+                    </ul>
+                </div>
+
+                <!-- International Schools -->
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-accent mb-2">International Schools</h3>
+                    <p class="text-text-secondary text-sm mb-4">Multi-language support with international curriculum frameworks.</p>
+                    <ul class="text-xs text-text-secondary space-y-1">
+                        <li>• Multi-language interface</li>
+                        <li>• IB/Cambridge support</li>
+                        <li>• Global compliance</li>
+                        <li>• Cultural adaptations</li>
+                    </ul>
+                </div>
+
+                <!-- Vocational Training -->
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-neutral-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-700 mb-2">Vocational Training</h3>
+                    <p class="text-text-secondary text-sm mb-4">Specialized features for technical and vocational education institutions.</p>
+                    <ul class="text-xs text-text-secondary space-y-1">
+                        <li>• Skills tracking</li>
+                        <li>• Industry partnerships</li>
+                        <li>• Certification management</li>
+                        <li>• Job placement tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Capabilities -->
+    <section id="integrations" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+                    Seamless Integration Ecosystem
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Connect EduCore with your existing tools and systems for a unified educational technology experience.
+                </p>
+            </div>
+
+            <!-- Integration Categories -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Learning Management Systems -->
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-primary mb-4">Learning Management</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-primary-100 rounded flex items-center justify-center">
+                                <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <span class="text-text-secondary">Google Classroom</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-primary-100 rounded flex items-center justify-center">
+                                <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <span class="text-text-secondary">Canvas LMS</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-primary-100 rounded flex items-center justify-center">
+                                <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <span class="text-text-secondary">Moodle</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-primary-100 rounded flex items-center justify-center">
+                                <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <span class="text-text-secondary">Schoology</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Communication & Productivity -->
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Communication & Productivity</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-secondary-100 rounded flex items-center justify-center">
+                                <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <span class="text-text-secondary">Microsoft 365</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-secondary-100 rounded flex items-center justify-center">
+                                <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <span class="text-text-secondary">Zoom</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-secondary-100 rounded flex items-center justify-center">
+                                <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <span class="text-text-secondary">Slack</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-secondary-100 rounded flex items-center justify-center">
+                                <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <span class="text-text-secondary">Microsoft Teams</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial & Administrative -->
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-accent mb-4">Financial & Administrative</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-accent-100 rounded flex items-center justify-center">
+                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <span class="text-text-secondary">QuickBooks</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-accent-100 rounded flex items-center justify-center">
+                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <span class="text-text-secondary">PowerSchool</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-accent-100 rounded flex items-center justify-center">
+                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <span class="text-text-secondary">Infinite Campus</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-accent-100 rounded flex items-center justify-center">
+                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <span class="text-text-secondary">State Reporting Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- API & Technical Specifications -->
+            <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8">
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">Developer-Friendly API</h3>
+                        <p class="text-text-secondary mb-6">
+                            RESTful API with comprehensive documentation, webhooks, and SDKs for seamless custom integrations.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <span class="text-text-secondary">RESTful API with OAuth 2.0 authentication</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <span class="text-text-secondary">Real-time webhooks for instant data sync</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <span class="text-text-secondary">SDKs for Python, JavaScript, and PHP</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <span class="text-text-secondary">Comprehensive API documentation</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow-elevation">
+                        <div class="bg-neutral-900 rounded-lg p-4 font-mono text-sm">
+                            <div class="text-secondary mb-2">// Example API Call</div>
+                            <div class="text-white">
+                                <span class="text-accent">GET</span> /api/v1/students<br />
+                                <span class="text-accent">Authorization:</span> Bearer {token}<br />
+                                <span class="text-accent">Content-Type:</span> application/json
+                            </div>
+                            <div class="text-neutral-400 mt-4">
+                                {<br />
+                                &nbsp;&nbsp;"students": [<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": "12345",<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Emma Johnson",<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"grade": "10",<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"attendance": 96.8<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                                &nbsp;&nbsp;]<br />
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-primary to-primary-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Ready to Experience EduCore?
+            </h2>
+            <p class="text-xl text-primary-100 mb-8">
+                See how our comprehensive platform can transform your educational institution with a personalized demo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="demo_request.html" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-smooth">
+                    Schedule Live Demo
+                </a>
+                <a href="pricing_plans.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-smooth">
+                    View Pricing Options
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#3B82F6"/>
+                            <path d="M12 14h16v2H12v-2zm0 4h16v2H12v-2zm0 4h12v2H12v-2z" fill="white"/>
+                            <circle cx="30" cy="12" r="4" fill="#10B981"/>
+                        </svg>
+                        <div class="ml-2">
+                            <h3 class="text-lg font-bold">EduCore</h3>
+                            <p class="text-xs text-neutral-400">ERP</p>
+                        </div>
+                    </div>
+                    <p class="text-neutral-400 text-sm">
+                        Transforming education through intelligent technology solutions.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm text-neutral-400">
+                        <li><a href="product_overview.html" class="hover:text-white transition-smooth">Features</a></li>
+                        <li><a href="solutions_by_institution_type.html" class="hover:text-white transition-smooth">Solutions</a></li>
+                        <li><a href="pricing_plans.html" class="hover:text-white transition-smooth">Pricing</a></li>
+                        <li><a href="demo_request.html" class="hover:text-white transition-smooth">Demo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-neutral-400">
+                        <li><a href="about_edu_core.html" class="hover:text-white transition-smooth">About Us</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-smooth">Careers</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-smooth">Press</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-smooth">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-neutral-400">
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-smooth">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-smooth">Documentation</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-smooth">Community</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-smooth">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-neutral-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-neutral-400 text-sm">© 2025 EduCore ERP. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="javascript:void(0)" class="text-neutral-400 hover:text-white transition-smooth">Privacy</a>
+                    <a href="javascript:void(0)" class="text-neutral-400 hover:text-white transition-smooth">Terms</a>
+                    <a href="javascript:void(0)" class="text-neutral-400 hover:text-white transition-smooth">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuButton = event.target.closest('button');
+            
+            if (!menuButton && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling for navigation pills
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Module highlighting functionality
+        function highlightModule(moduleId) {
+            // Remove active states
+            document.querySelectorAll('.module-card').forEach(card => {
+                card.classList.remove('ring-2', 'ring-primary');
+            });
+            
+            // Add active state to clicked module
+            const moduleCard = document.querySelector(`[onclick="highlightModule('${moduleId}')"]`);
+            if (moduleCard) {
+                moduleCard.classList.add('ring-2', 'ring-primary');
+            }
+            
+            // Show corresponding module content
+            showModule(moduleId);
+        }
+
+        // Module tab switching
+        function showModule(moduleId) {
+            // Hide all module panels
+            document.querySelectorAll('.module-panel').forEach(panel => {
+                panel.classList.add('hidden');
+                panel.classList.remove('active');
+            });
+            
+            // Show selected module panel
+            const targetPanel = document.getElementById(`${moduleId}-content`);
+            if (targetPanel) {
+                targetPanel.classList.remove('hidden');
+                targetPanel.classList.add('active');
+            }
+            
+            // Update tab states
+            document.querySelectorAll('.module-tab').forEach(tab => {
+                tab.classList.remove('active', 'bg-primary', 'text-white');
+                tab.classList.add('bg-white', 'text-primary', 'border', 'border-primary');
+            });
+            
+            // Activate selected tab
+            const activeTab = document.querySelector(`[data-module="${moduleId}"]`);
+            if (activeTab) {
+                activeTab.classList.add('active', 'bg-primary', 'text-white');
+                activeTab.classList.remove('bg-white', 'text-primary', 'border', 'border-primary');
+            }
+        }
+
+        // Initialize with first module active
+        document.addEventListener('DOMContentLoaded', function() {
+            showModule('student-info');
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

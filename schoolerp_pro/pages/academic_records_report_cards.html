@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic Records & Report Cards - SchoolERP Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="icon" type="image/x-icon" href="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fschoolerp8473back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,<svg width=" 60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%232563EB" fill-opacity="0.1"><circle cx="30" cy="30" r="2"></circle></g></g>'); background-size: 60px 60px;"></div>
+    </div>
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="w-64 bg-white shadow-lg border-r border-slate-200/20 fixed left-0 top-0 h-full z-40 transform transition-transform duration-300 lg:translate-x-0 -translate-x-full">
+            <!-- Logo Section -->
+            <div class="flex items-center justify-between p-6 border-b border-slate-200/20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <span class="text-lg font-bold text-slate-800">SchoolERP Pro</span>
+                </div>
+                <button id="closeSidebar" class="lg:hidden p-1 rounded-md hover:bg-slate-100">
+                    <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="p-4 space-y-2">
+                <a href="admin_dashboard.html" class="nav-item flex items-center space-x-3 px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h4a2 2 0 012 2v6H8V5z"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="student_management.html" class="nav-item flex items-center space-x-3 px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
+                    </svg>
+                    <span>Students</span>
+                </a>
+
+                <a href="teacher_management.html" class="nav-item flex items-center space-x-3 px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                    <span>Teachers</span>
+                </a>
+
+                <a href="academic_records_report_cards.html" class="nav-item active flex items-center space-x-3 px-3 py-2 rounded-md text-sm font-medium bg-primary-100 text-primary-700 transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <span>Academic Records</span>
+                </a>
+
+                <a href="attendance_tracking.html" class="nav-item flex items-center space-x-3 px-3 py-2 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                    </svg>
+                    <span>Attendance</span>
+                </a>
+
+                <!-- Academic Periods Section -->
+                <div class="pt-4 mt-4 border-t border-slate-200">
+                    <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Academic Periods</h3>
+                    <div class="space-y-1">
+                        <button class="period-btn active w-full text-left px-3 py-2 text-sm text-primary-700 bg-primary-50 rounded-md font-medium" data-period="current">
+                            Current Semester
+                        </button>
+                        <button class="period-btn w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-slate-50 rounded-md" data-period="previous">
+                            Previous Semester
+                        </button>
+                        <button class="period-btn w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-slate-50 rounded-md" data-period="archive">
+                            Archive
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- User Profile -->
+            <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-slate-200/20">
+                <div class="flex items-center space-x-3">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile" class="w-8 h-8 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-slate-800 truncate">Prof. Johnson</p>
+                        <p class="text-xs text-slate-500 truncate">Mathematics Teacher</p>
+                    </div>
+                    <a href="login_screen.html" class="p-1 rounded-md hover:bg-slate-100 text-slate-400 hover:text-slate-600">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 lg:ml-64">
+            <!-- Top Navigation -->
+            <header class="bg-white shadow-sm border-b border-slate-200/20 sticky top-0 z-30">
+                <div class="flex items-center justify-between px-6 py-4">
+                    <div class="flex items-center space-x-4">
+                        <button id="openSidebar" class="lg:hidden p-2 rounded-md hover:bg-slate-100">
+                            <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                            </svg>
+                        </button>
+                        <div>
+                            <h1 class="text-xl font-bold text-slate-800">Academic Records & Report Cards</h1>
+                            <p class="text-sm text-slate-600">Manage grades and generate comprehensive progress reports</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <!-- Quick Actions -->
+                        <button id="bulkImportBtn" class="btn btn-secondary text-sm">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/>
+                            </svg>
+                            Import Grades
+                        </button>
+                        <button id="generateReportBtn" class="btn btn-primary text-sm">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            Generate Reports
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="p-6 space-y-6">
+                <!-- Analytics Dashboard -->
+                <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Performance Overview -->
+                    <div class="lg:col-span-2 card p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold text-slate-800">Class Performance Distribution</h3>
+                            <select class="text-sm border border-slate-300 rounded-md px-3 py-1">
+                                <option>Grade 10-A</option>
+                                <option>Grade 10-B</option>
+                                <option>Grade 11-A</option>
+                            </select>
+                        </div>
+                        <div class="h-64">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Subject Averages -->
+                    <div class="card p-6">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-4">Subject Averages</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-600">Mathematics</span>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-20 bg-slate-200 rounded-full h-2">
+                                        <div class="bg-accent h-2 rounded-full" style="width: 85%"></div>
+                                    </div>
+                                    <span class="text-sm font-medium text-slate-800">85%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-600">Physics</span>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-20 bg-slate-200 rounded-full h-2">
+                                        <div class="bg-primary h-2 rounded-full" style="width: 78%"></div>
+                                    </div>
+                                    <span class="text-sm font-medium text-slate-800">78%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-600">Chemistry</span>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-20 bg-slate-200 rounded-full h-2">
+                                        <div class="bg-warning h-2 rounded-full" style="width: 72%"></div>
+                                    </div>
+                                    <span class="text-sm font-medium text-slate-800">72%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-600">Biology</span>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-20 bg-slate-200 rounded-full h-2">
+                                        <div class="bg-secondary h-2 rounded-full" style="width: 80%"></div>
+                                    </div>
+                                    <span class="text-sm font-medium text-slate-800">80%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-slate-600">English</span>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-20 bg-slate-200 rounded-full h-2">
+                                        <div class="bg-error h-2 rounded-full" style="width: 68%"></div>
+                                    </div>
+                                    <span class="text-sm font-medium text-slate-800">68%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Grade Book Section -->
+                <section class="card">
+                    <div class="p-6 border-b border-slate-200">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
+                            <div>
+                                <h2 class="text-xl font-bold text-slate-800">Grade Book</h2>
+                                <p class="text-sm text-slate-600">Grade 10-A • Mathematics • Fall 2025</p>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <select class="form-input text-sm w-auto">
+                                    <option>All Categories</option>
+                                    <option>Tests (40%)</option>
+                                    <option>Homework (30%)</option>
+                                    <option>Projects (30%)</option>
+                                </select>
+                                <button class="btn btn-accent text-sm">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                    </svg>
+                                    Add Assignment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grade Table -->
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-slate-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider sticky left-0 bg-slate-50 z-10">Student</th>
+                                    <th class="px-4 py-3 text-center text-xs font-medium text-slate-500 uppercase tracking-wider">Test 1<br /><span class="text-xs font-normal">(40%)</span></th>
+                                    <th class="px-4 py-3 text-center text-xs font-medium text-slate-500 uppercase tracking-wider">Quiz 1<br /><span class="text-xs font-normal">(10%)</span></th>
+                                    <th class="px-4 py-3 text-center text-xs font-medium text-slate-500 uppercase tracking-wider">Homework<br /><span class="text-xs font-normal">(30%)</span></th>
+                                    <th class="px-4 py-3 text-center text-xs font-medium text-slate-500 uppercase tracking-wider">Project<br /><span class="text-xs font-normal">(20%)</span></th>
+                                    <th class="px-4 py-3 text-center text-xs font-medium text-slate-500 uppercase tracking-wider">Current GPA</th>
+                                    <th class="px-4 py-3 text-center text-xs font-medium text-slate-500 uppercase tracking-wider">Grade</th>
+                                    <th class="px-4 py-3 text-center text-xs font-medium text-slate-500 uppercase tracking-wider">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-slate-200">
+                                <tr class="hover:bg-slate-50">
+                                    <td class="px-6 py-4 whitespace-nowrap sticky left-0 bg-white z-10">
+                                        <div class="flex items-center">
+                                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Student" class="w-8 h-8 rounded-full object-cover mr-3" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                            <div>
+                                                <div class="text-sm font-medium text-slate-900">Emma Johnson</div>
+                                                <div class="text-sm text-slate-500">#2025001</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-slate-300 rounded text-center focus:ring-2 focus:ring-primary-500 focus:border-primary-500" value="92" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-slate-300 rounded text-center focus:ring-2 focus:ring-primary-500 focus:border-primary-500" value="88" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-slate-300 rounded text-center focus:ring-2 focus:ring-primary-500 focus:border-primary-500" value="95" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-slate-300 rounded text-center focus:ring-2 focus:ring-primary-500 focus:border-primary-500" value="90" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <span class="gpa-display text-sm font-medium text-accent-600">3.7</span>
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <span class="grade-display inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-accent-100 text-accent-800">A-</span>
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <button class="comment-btn text-slate-400 hover:text-primary-600 mr-2">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                            </svg>
+                                        </button>
+                                        <button class="history-btn text-slate-400 hover:text-secondary-600">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="hover:bg-slate-50">
+                                    <td class="px-6 py-4 whitespace-nowrap sticky left-0 bg-white z-10">
+                                        <div class="flex items-center">
+                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Student" class="w-8 h-8 rounded-full object-cover mr-3" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                            <div>
+                                                <div class="text-sm font-medium text-slate-900">Michael Chen</div>
+                                                <div class="text-sm text-slate-500">#2025002</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-slate-300 rounded text-center focus:ring-2 focus:ring-primary-500 focus:border-primary-500" value="78" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-slate-300 rounded text-center focus:ring-2 focus:ring-primary-500 focus:border-primary-500" value="82" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-slate-300 rounded text-center focus:ring-2 focus:ring-primary-500 focus:border-primary-500" value="85" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-slate-300 rounded text-center focus:ring-2 focus:ring-primary-500 focus:border-primary-500" value="75" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <span class="gpa-display text-sm font-medium text-warning-600">2.8</span>
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <span class="grade-display inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-warning-100 text-warning-800">B-</span>
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <button class="comment-btn text-slate-400 hover:text-primary-600 mr-2">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                            </svg>
+                                        </button>
+                                        <button class="history-btn text-slate-400 hover:text-secondary-600">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="hover:bg-slate-50 bg-error-50">
+                                    <td class="px-6 py-4 whitespace-nowrap sticky left-0 bg-error-50 z-10">
+                                        <div class="flex items-center">
+                                            <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Student" class="w-8 h-8 rounded-full object-cover mr-3" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                            <div>
+                                                <div class="text-sm font-medium text-slate-900 flex items-center">
+                                                    Sarah Williams
+                                                    <svg class="w-4 h-4 text-error-500 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16c-.77.833.192 2.5 1.732 2.5z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="text-sm text-slate-500">#2025003</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-error-300 rounded text-center focus:ring-2 focus:ring-error-500 focus:border-error-500" value="65" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-error-300 rounded text-center focus:ring-2 focus:ring-error-500 focus:border-error-500" value="58" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-error-300 rounded text-center focus:ring-2 focus:ring-error-500 focus:border-error-500" value="72" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-error-300 rounded text-center focus:ring-2 focus:ring-error-500 focus:border-error-500" value="60" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <span class="gpa-display text-sm font-medium text-error-600">2.1</span>
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <span class="grade-display inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-error-100 text-error-800">D+</span>
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <button class="comment-btn text-slate-400 hover:text-primary-600 mr-2">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                            </svg>
+                                        </button>
+                                        <button class="history-btn text-slate-400 hover:text-secondary-600">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="hover:bg-slate-50">
+                                    <td class="px-6 py-4 whitespace-nowrap sticky left-0 bg-white z-10">
+                                        <div class="flex items-center">
+                                            <img src="https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Student" class="w-8 h-8 rounded-full object-cover mr-3" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                            <div>
+                                                <div class="text-sm font-medium text-slate-900">David Rodriguez</div>
+                                                <div class="text-sm text-slate-500">#2025004</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-slate-300 rounded text-center focus:ring-2 focus:ring-primary-500 focus:border-primary-500" value="95" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-slate-300 rounded text-center focus:ring-2 focus:ring-primary-500 focus:border-primary-500" value="92" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-slate-300 rounded text-center focus:ring-2 focus:ring-primary-500 focus:border-primary-500" value="98" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <input type="number" class="grade-input w-16 px-2 py-1 text-sm border border-slate-300 rounded text-center focus:ring-2 focus:ring-primary-500 focus:border-primary-500" value="94" min="0" max="100" />
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <span class="gpa-display text-sm font-medium text-accent-600">4.0</span>
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <span class="grade-display inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-accent-100 text-accent-800">A</span>
+                                    </td>
+                                    <td class="px-4 py-4 text-center">
+                                        <button class="comment-btn text-slate-400 hover:text-primary-600 mr-2">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                            </svg>
+                                        </button>
+                                        <button class="history-btn text-slate-400 hover:text-secondary-600">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Grade Summary -->
+                    <div class="p-6 border-t border-slate-200 bg-slate-50">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-accent-600">3.2</div>
+                                <div class="text-sm text-slate-600">Class Average GPA</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary-600">85%</div>
+                                <div class="text-sm text-slate-600">Pass Rate</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-warning-600">1</div>
+                                <div class="text-sm text-slate-600">At-Risk Students</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-secondary-600">4</div>
+                                <div class="text-sm text-slate-600">Total Students</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Comment Bank -->
+                <section class="card p-6">
+                    <h3 class="text-lg font-semibold text-slate-800 mb-4">Quick Comment Bank</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <button class="comment-template text-left p-3 border border-slate-200 rounded-md hover:bg-slate-50 text-sm">
+                            "Excellent work! Shows strong understanding of concepts."
+                        </button>
+                        <button class="comment-template text-left p-3 border border-slate-200 rounded-md hover:bg-slate-50 text-sm">
+                            "Good effort. Consider reviewing problem-solving strategies."
+                        </button>
+                        <button class="comment-template text-left p-3 border border-slate-200 rounded-md hover:bg-slate-50 text-sm">
+                            "Needs improvement in homework completion."
+                        </button>
+                        <button class="comment-template text-left p-3 border border-slate-200 rounded-md hover:bg-slate-50 text-sm">
+                            "Shows improvement from last assessment."
+                        </button>
+                        <button class="comment-template text-left p-3 border border-slate-200 rounded-md hover:bg-slate-50 text-sm">
+                            "Recommend additional practice with word problems."
+                        </button>
+                        <button class="comment-template text-left p-3 border border-slate-200 rounded-md hover:bg-slate-50 text-sm">
+                            "Demonstrates strong analytical thinking skills."
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Report Generation Modal -->
+    <div id="reportModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-modal max-w-2xl w-full max-h-screen overflow-y-auto">
+            <div class="p-6 border-b border-slate-200">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-semibold text-slate-800">Generate Report Cards</h3>
+                    <button id="closeReportModal" class="text-slate-400 hover:text-slate-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="p-6 space-y-6">
+                <!-- Student Selection -->
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Select Students</label>
+                    <div class="space-y-2 max-h-40 overflow-y-auto border border-slate-200 rounded-md p-3">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked />
+                            <span class="text-sm">Emma Johnson (#2025001)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked />
+                            <span class="text-sm">Michael Chen (#2025002)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked />
+                            <span class="text-sm">Sarah Williams (#2025003)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked />
+                            <span class="text-sm">David Rodriguez (#2025004)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Marking Period -->
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Marking Period</label>
+                    <select class="form-input">
+                        <option>Fall 2025 - Quarter 1</option>
+                        <option>Fall 2025 - Quarter 2</option>
+                        <option>Spring 2025 - Quarter 1</option>
+                        <option>Spring 2025 - Quarter 2</option>
+                    </select>
+                </div>
+
+                <!-- Template Format -->
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Report Template</label>
+                    <div class="grid grid-cols-2 gap-4">
+                        <label class="flex items-center p-3 border border-slate-200 rounded-md cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="template" value="standard" class="mr-3" checked />
+                            <div>
+                                <div class="font-medium text-sm">Standard Report</div>
+                                <div class="text-xs text-slate-500">Traditional format with grades and comments</div>
+                            </div>
+                        </label>
+                        <label class="flex items-center p-3 border border-slate-200 rounded-md cursor-pointer hover:bg-slate-50">
+                            <input type="radio" name="template" value="detailed" class="mr-3" />
+                            <div>
+                                <div class="font-medium text-sm">Detailed Report</div>
+                                <div class="text-xs text-slate-500">Includes analytics and progress charts</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Preview -->
+                <div class="border border-slate-200 rounded-md p-4 bg-slate-50">
+                    <h4 class="font-medium text-slate-800 mb-2">Preview</h4>
+                    <div class="text-sm text-slate-600 space-y-1">
+                        <div>Students: 4 selected</div>
+                        <div>Period: Fall 2025 - Quarter 1</div>
+                        <div>Template: Standard Report</div>
+                        <div>Format: PDF</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 border-t border-slate-200 flex justify-end space-x-3">
+                <button id="cancelReport" class="px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-md hover:bg-slate-50">
+                    Cancel
+                </button>
+                <button id="generateReport" class="btn btn-primary text-sm">
+                    Generate Reports
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bulk Import Modal -->
+    <div id="importModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-modal max-w-lg w-full">
+            <div class="p-6 border-b border-slate-200">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-semibold text-slate-800">Import Grades</h3>
+                    <button id="closeImportModal" class="text-slate-400 hover:text-slate-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="p-6 space-y-4">
+                <div class="border-2 border-dashed border-slate-300 rounded-lg p-6 text-center">
+                    <svg class="w-12 h-12 text-slate-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/>
+                    </svg>
+                    <p class="text-sm text-slate-600 mb-2">Drop your CSV file here or click to browse</p>
+                    <input type="file" accept=".csv" class="hidden" id="csvFile" />
+                    <button class="btn btn-secondary text-sm" onclick="document.getElementById('csvFile').click()">
+                        Choose File
+                    </button>
+                </div>
+
+                <div class="text-xs text-slate-500">
+                    <p class="mb-2"><strong>CSV Format Requirements:</strong></p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>First column: Student ID</li>
+                        <li>Subsequent columns: Assignment scores</li>
+                        <li>Header row required</li>
+                        <li>Maximum file size: 5MB</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="p-6 border-t border-slate-200 flex justify-end space-x-3">
+                <button id="cancelImport" class="px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-md hover:bg-slate-50">
+                    Cancel
+                </button>
+                <button id="importGrades" class="btn btn-primary text-sm">
+                    Import Grades
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sidebar functionality
+        const sidebar = document.getElementById('sidebar');
+        const openSidebar = document.getElementById('openSidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
+
+        openSidebar.addEventListener('click', () => {
+            sidebar.classList.remove('-translate-x-full');
+        });
+
+        closeSidebar.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+        });
+
+        // Period selection
+        document.querySelectorAll('.period-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.period-btn').forEach(b => {
+                    b.classList.remove('active', 'bg-primary-50', 'text-primary-700');
+                    b.classList.add('text-slate-600', 'hover:bg-slate-50');
+                });
+                this.classList.add('active', 'bg-primary-50', 'text-primary-700');
+                this.classList.remove('text-slate-600', 'hover:bg-slate-50');
+            });
+        });
+
+        // Grade calculation
+        function calculateGPA(grades) {
+            const weights = [0.4, 0.1, 0.3, 0.2]; // Test, Quiz, Homework, Project
+            let totalWeightedScore = 0;
+            let totalWeight = 0;
+
+            grades.forEach((grade, index) => {
+                if (grade !== null && grade !== '') {
+                    totalWeightedScore += grade * weights[index];
+                    totalWeight += weights[index];
+                }
+            });
+
+            const average = totalWeight > 0 ? totalWeightedScore / totalWeight : 0;
+            
+            // Convert to 4.0 scale
+            if (average >= 97) return 4.0;
+            if (average >= 93) return 3.7;
+            if (average >= 90) return 3.3;
+            if (average >= 87) return 3.0;
+            if (average >= 83) return 2.7;
+            if (average >= 80) return 2.3;
+            if (average >= 77) return 2.0;
+            if (average >= 73) return 1.7;
+            if (average >= 70) return 1.3;
+            if (average >= 67) return 1.0;
+            if (average >= 65) return 0.7;
+            return 0.0;
+        }
+
+        function getLetterGrade(gpa) {
+            if (gpa >= 3.7) return 'A';
+            if (gpa >= 3.3) return 'A-';
+            if (gpa >= 3.0) return 'B+';
+            if (gpa >= 2.7) return 'B';
+            if (gpa >= 2.3) return 'B-';
+            if (gpa >= 2.0) return 'C+';
+            if (gpa >= 1.7) return 'C';
+            if (gpa >= 1.3) return 'C-';
+            if (gpa >= 1.0) return 'D+';
+            if (gpa >= 0.7) return 'D';
+            return 'F';
+        }
+
+        // Real-time grade updates
+        document.querySelectorAll('.grade-input').forEach(input => {
+            input.addEventListener('input', function() {
+                const row = this.closest('tr');
+                const gradeInputs = row.querySelectorAll('.grade-input');
+                const gpaDisplay = row.querySelector('.gpa-display');
+                const gradeDisplay = row.querySelector('.grade-display');
+
+                const grades = Array.from(gradeInputs).map(input => parseFloat(input.value) || 0);
+                const gpa = calculateGPA(grades);
+                const letterGrade = getLetterGrade(gpa);
+
+                gpaDisplay.textContent = gpa.toFixed(1);
+                gradeDisplay.textContent = letterGrade;
+
+                // Update colors based on performance
+                if (gpa >= 3.0) {
+                    gpaDisplay.className = 'gpa-display text-sm font-medium text-accent-600';
+                    gradeDisplay.className = 'grade-display inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-accent-100 text-accent-800';
+                    row.classList.remove('bg-error-50');
+                } else if (gpa >= 2.0) {
+                    gpaDisplay.className = 'gpa-display text-sm font-medium text-warning-600';
+                    gradeDisplay.className = 'grade-display inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-warning-100 text-warning-800';
+                    row.classList.remove('bg-error-50');
+                } else {
+                    gpaDisplay.className = 'gpa-display text-sm font-medium text-error-600';
+                    gradeDisplay.className = 'grade-display inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-error-100 text-error-800';
+                    row.classList.add('bg-error-50');
+                }
+            });
+        });
+
+        // Chart.js Performance Chart
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        const performanceChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['A (90-100)', 'B (80-89)', 'C (70-79)', 'D (60-69)', 'F (0-59)'],
+                datasets: [{
+                    label: 'Number of Students',
+                    data: [1, 1, 1, 1, 0],
+                    backgroundColor: [
+                        'rgba(16, 185, 129, 0.8)',
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(239, 68, 68, 0.8)',
+                        'rgba(107, 114, 128, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(16, 185, 129, 1)',
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(245, 158, 11, 1)',
+                        'rgba(239, 68, 68, 1)',
+                        'rgba(107, 114, 128, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+
+        // Modal functionality
+        const reportModal = document.getElementById('reportModal');
+        const importModal = document.getElementById('importModal');
+        const generateReportBtn = document.getElementById('generateReportBtn');
+        const bulkImportBtn = document.getElementById('bulkImportBtn');
+
+        generateReportBtn.addEventListener('click', () => {
+            reportModal.classList.remove('hidden');
+        });
+
+        bulkImportBtn.addEventListener('click', () => {
+            importModal.classList.remove('hidden');
+        });
+
+        document.getElementById('closeReportModal').addEventListener('click', () => {
+            reportModal.classList.add('hidden');
+        });
+
+        document.getElementById('closeImportModal').addEventListener('click', () => {
+            importModal.classList.add('hidden');
+        });
+
+        document.getElementById('cancelReport').addEventListener('click', () => {
+            reportModal.classList.add('hidden');
+        });
+
+        document.getElementById('cancelImport').addEventListener('click', () => {
+            importModal.classList.add('hidden');
+        });
+
+        // Generate report functionality
+        document.getElementById('generateReport').addEventListener('click', () => {
+            // Simulate report generation
+            alert('Report cards generated successfully! Check your downloads folder.');
+            reportModal.classList.add('hidden');
+        });
+
+        // Import grades functionality
+        document.getElementById('importGrades').addEventListener('click', () => {
+            // Simulate grade import
+            alert('Grades imported successfully!');
+            importModal.classList.add('hidden');
+        });
+
+        // Comment template functionality
+        document.querySelectorAll('.comment-template').forEach(template => {
+            template.addEventListener('click', function() {
+                const comment = this.textContent.trim();
+                // In a real application, this would populate a comment field
+                console.log('Selected comment:', comment);
+            });
+        });
+
+        // Close modals when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === reportModal) {
+                reportModal.classList.add('hidden');
+            }
+            if (e.target === importModal) {
+                importModal.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
